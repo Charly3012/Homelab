@@ -1,0 +1,14 @@
+services:
+  mc-bedrock:
+    image: itzg/minecraft-bedrock-server
+    container_name: mc-bedrock
+    restart: unless-stopped
+    ports:
+      - '19132:19132/udp' #Must be UDP
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "survival"
+      DIFFICULTY: "easy"
+      SERVER_NAME: "Servidor de la Escuela"
+    volumes:
+      - ./data:/data

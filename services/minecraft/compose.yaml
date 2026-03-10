@@ -1,0 +1,14 @@
+services:
+  mc-java:
+    image: itzg/minecraft-server
+    container_name: mc-java
+    restart: unless-stopped
+    ports:
+      - '25565:25565' 
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER" 
+      MEMORY: "2G"   # RAM Memory
+      VERSION: "LATEST"
+    volumes:
+      - ./data:/data
